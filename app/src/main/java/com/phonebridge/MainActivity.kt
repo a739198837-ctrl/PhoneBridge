@@ -16,20 +16,14 @@ import android.widget.TextView
 class MainActivity : Activity() {
 
     companion object {
-
-        private const val
-        CALL_PERMISSION_REQUEST = 1001
+        private const val CALL_PERMISSION_REQUEST = 1001
     }
 
 
     override fun onCreate(
         savedInstanceState: Bundle?
     ) {
-
-        super.onCreate(
-            savedInstanceState
-        )
-
+        super.onCreate(savedInstanceState)
 
         buildInterface()
 
@@ -39,17 +33,13 @@ class MainActivity : Activity() {
 
     private fun buildInterface() {
 
-        val layout =
-            LinearLayout(this)
-
+        val layout = LinearLayout(this)
 
         layout.orientation =
             LinearLayout.VERTICAL
 
-
         layout.gravity =
             Gravity.CENTER
-
 
         layout.setPadding(
             40,
@@ -59,25 +49,15 @@ class MainActivity : Activity() {
         )
 
 
-        val title =
-            TextView(this)
+        val title = TextView(this)
 
+        title.text = "PhoneBridge"
 
-        title.text =
-            "PhoneBridge"
+        title.textSize = 30f
 
+        title.gravity = Gravity.CENTER
 
-        title.textSize =
-            30f
-
-
-        title.gravity =
-            Gravity.CENTER
-
-
-        title.setTextColor(
-            Color.BLACK
-        )
+        title.setTextColor(Color.BLACK)
 
 
         layout.addView(
@@ -89,21 +69,14 @@ class MainActivity : Activity() {
         )
 
 
-        val status =
-            TextView(this)
-
+        val status = TextView(this)
 
         status.text =
             "جاري تشغيل خدمة الاتصال..."
 
+        status.textSize = 18f
 
-        status.textSize =
-            18f
-
-
-        status.gravity =
-            Gravity.CENTER
-
+        status.gravity = Gravity.CENTER
 
         status.setPadding(
             0,
@@ -122,16 +95,12 @@ class MainActivity : Activity() {
         )
 
 
-        val startButton =
-            Button(this)
-
+        val startButton = Button(this)
 
         startButton.text =
             "تشغيل خدمة PhoneBridge"
 
-
-        startButton.textSize =
-            18f
+        startButton.textSize = 18f
 
 
         startButton.setOnClickListener {
@@ -152,9 +121,7 @@ class MainActivity : Activity() {
         )
 
 
-        val info =
-            TextView(this)
-
+        val info = TextView(this)
 
         info.text =
             """
@@ -170,13 +137,9 @@ class MainActivity : Activity() {
             """.trimIndent()
 
 
-        info.textSize =
-            16f
+        info.textSize = 16f
 
-
-        info.gravity =
-            Gravity.CENTER
-
+        info.gravity = Gravity.CENTER
 
         info.setPadding(
             0,
@@ -206,8 +169,7 @@ class MainActivity : Activity() {
             &&
             checkSelfPermission(
                 Manifest.permission.CALL_PHONE
-            )
-            != PackageManager.PERMISSION_GRANTED
+            ) != PackageManager.PERMISSION_GRANTED
         ) {
 
             requestPermissions(
